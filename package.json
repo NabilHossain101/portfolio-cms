@@ -1,0 +1,10 @@
+{
+  "name": "portfolio-cms",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently --kill-others --raw \"dotnet watch --project src/PortfolioCms.Api --non-interactive\" \"npm --prefix admin run dev\""
+  },
+  "devDependencies": {
+    "concurrently": "^10.0.7"
+  }
+}

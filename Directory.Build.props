@@ -1,0 +1,7 @@
+<Project>
+  <!-- Workaround for https://github.com/dotnet/sdk/issues/54309: MSBuild's default "obj\" makes dotnet watch
+       look for obj\Debug/... on Linux/macOS. Same folder; remove once the SDK fix ships. -->
+  <PropertyGroup Condition="'$(OS)' != 'Windows_NT'">
+    <BaseIntermediateOutputPath>obj/</BaseIntermediateOutputPath>
+  </PropertyGroup>
+</Project>

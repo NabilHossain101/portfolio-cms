@@ -1,0 +1,5 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/PortfolioCms.Api/PortfolioCms.Api.csproj" />
+  </Folder>
+</Solution>

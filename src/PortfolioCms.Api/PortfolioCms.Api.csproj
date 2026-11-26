@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <!-- Stops dotnet watch reacting to new uploads, which crashes its hot reload. -->
+    <DefaultItemExcludes>$(DefaultItemExcludes);wwwroot/uploads/**</DefaultItemExcludes>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.15" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="10.0.15">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="10.0.15" />
+    <PackageReference Include="Scalar.AspNetCore" Version="3.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Uploaded files are runtime data, not part of a release; .gitkeep keeps wwwroot in the publish output. -->
+    <Content Remove="wwwroot/uploads/**" />
+    <Content Include="wwwroot/uploads/.gitkeep" CopyToPublishDirectory="PreserveNewest" />
+  </ItemGroup>
+
+</Project>
